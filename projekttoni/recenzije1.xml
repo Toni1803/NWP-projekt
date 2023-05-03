@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reviews>
+    <review>
+        <username>pero_peric</username>
+        <rating>4</rating>
+        <comment>Osoblje je bilo ljubazno i uslužno, a objekti su bili čisti i dobro održavani.</comment>
+    </review>
+    <review>
+        <username>marko_markic</username>
+        <rating>3</rating>
+        <comment>Vrijeme čekanja bilo je dulje nego što sam očekivala, ali liječnik je bio susretljiv i odvojio je vrijeme da odgovori na sva moja pitanja.</comment>
+    </review>
+    <review>
+        <username>ivo_ivic</username>
+        <rating>2</rating>
+        <comment>Imao sam loše iskustvo s jednom od recepcionarki koja je bila bezobrazna i bespomoćna.</comment>
+    </review>
+    <review>
+        <username>nino_ninic</username>
+        <rating>5</rating>
+        <comment>Poliklinika je bila izvrsna u svakom pogledu - od osoblja preko sadržaja do kvalitete skrbi. Preporučujem ju!</comment>
+    </review>
+	<review>
+        <username>a_starinec</username>
+        <rating>3</rating>
+        <comment>Sveukupno, moje iskustvo u poliklinici bilo je dobro, ali vrijeme čekanja bilo je prilično dugo i objektima bi dobro došlo malo ažuriranja.</comment>
+    </review>
+    <review>
+        <username>i_znaor</username>
+        <rating>4</rating>
+        <comment>Impresioniran sam profesionalnošću osoblja i kvalitetom njege koju sam dobio u poliklinici. Ipak, parkiranje je predstavljalo mali izazov.</comment>
+    </review>
+    <review>
+        <username>luka_lucic</username>
+        <rating>2</rating>
+        <comment>Bilo mi je teško zakazati termin, a kad sam ga konačno dobio, morao sam dugo čekati da me vide. Doktor je bio ljubazan, ali mislim da se neću vratiti.</comment>
+    </review>
+</reviews>

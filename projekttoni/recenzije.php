@@ -32,9 +32,37 @@ table#reviews-table tbody tr:hover {
     background-color: #e6e6e6;
 }
 body{background-image:url(slike-galerija/4.jpg); background-size:100% 100%; background-repeat:no-repeat;}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
 </style>
 <body>
     <h1>Tablica recenzija</h1>
+	<div class="container">
+	<label for="grade-filter">Grade:</label>
+<select id="grade-filter">
+  <option value="1">1 star</option>
+  <option value="2">2 stars</option>
+  <option value="3">3 stars</option>
+  <option value="4">4 stars</option>
+  <option value="5">5 stars</option>
+</select>
+</div>
     <table id="reviews-table">
         <thead>
             <tr>
@@ -48,16 +76,16 @@ body{background-image:url(slike-galerija/4.jpg); background-size:100% 100%; back
     </table>
 
     <script>
-        // Load the XML file
+
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "recenzije1.xml");
         xhr.onload = function() {
             if (xhr.status === 200) {
-                // Parse the XML file
+
                 var xmlDoc = xhr.responseXML;
                 var reviews = xmlDoc.getElementsByTagName("review");
 
-                // Loop through the reviews and add them to the table
+
                 for (var i = 0; i < reviews.length; i++) {
                     var username = reviews[i].getElementsByTagName("username")[0].childNodes[0].nodeValue;
                     var rating = reviews[i].getElementsByTagName("rating")[0].childNodes[0].nodeValue;
@@ -75,6 +103,24 @@ body{background-image:url(slike-galerija/4.jpg); background-size:100% 100%; back
                     row.appendChild(commentCell);
                     document.getElementById("reviews-table").getElementsByTagName("tbody")[0].appendChild(row);
                 }
+
+                var gradeFilter = document.getElementById("grade-filter");
+                gradeFilter.addEventListener("change", function() {
+                var selectedGrade = parseInt(gradeFilter.value);
+  
+
+                var rows = document.getElementById("reviews-table").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+                for (var i = 0; i < rows.length; i++) {
+                var ratingCell = rows[i].getElementsByTagName("td")[1];
+                var rating = parseInt(ratingCell.innerHTML);
+    
+                if (rating === selectedGrade) {
+                rows[i].style.display = "";
+                } else {
+                rows[i].style.display = "none";
+                       }
+                    }
+                });
             }
         };
         xhr.send();
